@@ -50,27 +50,3 @@
                          (reverse (range order)))))
            )
     ))
-
-(deftest diamond-test
-  (is (=
-       (diamond 0)
-       "A"))
-  (is (=
-
-(diamond 1)
-" A
-B B
- A"
-
-  )
-
-      (is (=
-           (diamond 2)
-"  A
- B B
-C   C
- B B
-  A"))
-
-)
-)
