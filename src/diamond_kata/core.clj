@@ -24,14 +24,6 @@
     )
 )
 
-(comment
-
-  (= "A" (line 0 0))
-  (= " A" (line 1 0))
-  (= "B B" (line 1 1))
-
-)
-
 (defn diamond [order]
   (case order
     0 (str (line order 0))
