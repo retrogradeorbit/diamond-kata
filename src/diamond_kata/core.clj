@@ -1,5 +1,4 @@
 (ns diamond-kata.core
-  (:require [clojure.test :refer :all])
   (:gen-class))
 
 (defn- char-for [num]
