@@ -64,5 +64,13 @@ B B
 
   )
 
+      (is (=
+           (diamond 2)
+"  A
+ B B
+C   C
+ B B
+  A"))
+
 )
 )
