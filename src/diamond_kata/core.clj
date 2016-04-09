@@ -32,8 +32,8 @@
 )
 
 (defn diamond [order]
-  (case order
-    0 (str (line order 0))
+  (if (zero? order)
+    (str (line order 0))
 
     ;; full diamonds
     (apply str (concat (interpose
