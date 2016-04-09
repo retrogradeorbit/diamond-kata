@@ -30,17 +30,15 @@
     (str (line order 0))
 
     ;; full diamonds
-    (apply str (concat (interpose
-                        "\n"
-                        (map
-                         (partial line order)
-                         (range (inc order))))
-                       ["\n"]
-                       (interpose
-                        "\n"
-                        (map
-                         (partial line order)
-                         (reverse (range order))))))))
+    (apply
+     str
+     (interpose
+      "\n"
+      (map
+       (partial line order)
+       (concat (range (inc order))
+               (reverse (range order)))))
+)))
 
 (defn -main
   "Print out a diamond order n"
