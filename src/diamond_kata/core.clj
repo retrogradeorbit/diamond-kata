@@ -5,8 +5,8 @@
 (defn- char-for [num]
   (char (+ (int \A) num)))
 
-(defn- n-spaces [n]
-  (apply str (take n (repeat \space))))
+(defn- num-spaces [num]
+  (apply str (take num (repeat \space))))
 
 (defn- prefix-spaces [order num]
   (n-spaces (- order num)))
