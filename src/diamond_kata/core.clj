@@ -15,7 +15,12 @@
        )
 
     ;; other line
-    nil
+    (str
+       (apply str (take (- order num) (repeat \space)))
+       (char (+ (int \A) num))
+       (apply str (take (dec (* 2 num)) (repeat \space)))
+       (char (+ (int \A) num))
+       )
     )
 )
 
@@ -23,6 +28,7 @@
 
   (= "A" (line 0 0))
   (= " A" (line 1 0))
+  (= "B B" (line 1 1))
 
 )
 
