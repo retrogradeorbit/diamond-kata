@@ -2,11 +2,6 @@
   (:require [clojure.test :refer :all])
   (:gen-class))
 
-(defn -main
-  "I don't do a whole lot ... yet."
-  [& args]
-  (println "Hello, World!"))
-
 (defn- char-for [num]
   (char (+ (int \A) num)))
 
@@ -46,3 +41,8 @@
                         (map
                          (partial line order)
                          (reverse (range order))))))))
+
+(defn -main
+  "Print out a diamond order n"
+  [n]
+  (println (diamond (read-string n))))
