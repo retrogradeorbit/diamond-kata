@@ -1,7 +1,8 @@
 (ns diamond-kata.core-test
   (:require [clojure.test :refer :all]
-            [diamond-kata.core :refer :all]))
+            [diamond-kata.core :as core]))
 
-(deftest a-test
-  (testing "FIXME, I fail."
-    (is (= 0 1))))
+(deftest diamond
+  (is (=
+       (core/diamond 1)
+       "A\n")))
