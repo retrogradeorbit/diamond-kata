@@ -21,8 +21,7 @@
     ;; first/last line
     (str
        (prefix-spaces order num)
-       (char-for 0)
-       )
+       (char-for 0))
 
     ;; other line
     (str
@@ -46,6 +45,4 @@
                         "\n"
                         (map
                          (partial line order)
-                         (reverse (range order)))))
-           )
-    ))
+                         (reverse (range order))))))))
