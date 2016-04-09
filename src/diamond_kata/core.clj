@@ -27,7 +27,8 @@
 
 (defn diamond [order]
   (if (zero? order)
-    (str (line order 0))
+    ;; special case of just "A"
+    (line order 0)
 
     ;; full diamonds
     (apply
