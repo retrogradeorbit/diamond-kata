@@ -14,8 +14,9 @@
   (apply str (take len (repeat \space))))
 
 (defn- line [order num]
-  (case num
-    0 (str
+  (if (zero? num)
+    ;; first/last line
+    (str
        (n-spaces (- order num))
        (char-for 0)
        )
