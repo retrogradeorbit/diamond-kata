@@ -33,7 +33,23 @@
 )
 
 (defn diamond [order]
-  (str (line order 0)))
+  (case order
+    0 (str (line order 0))
+
+    ;; full diamonds
+    (apply str (concat (interpose
+                        "\n"
+                        (map
+                         (partial line order)
+                         (range (inc order))))
+                       ["\n"]
+                       (interpose
+                        "\n"
+                        (map
+                         (partial line order)
+                         (reverse (range order)))))
+           )
+    ))
 
 (deftest diamond-test
   (is (=
@@ -41,7 +57,7 @@
        "A"))
   (is (=
 
-(diamond 2)
+(diamond 1)
 " A
 B B
  A"
