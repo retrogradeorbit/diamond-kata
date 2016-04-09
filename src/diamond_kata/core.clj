@@ -7,19 +7,25 @@
   [& args]
   (println "Hello, World!"))
 
+(defn- char-for [num]
+  (char (+ (int \A) num)))
+
+(defn- n-spaces [len]
+  (apply str (take len (repeat \space))))
+
 (defn- line [order num]
   (case num
     0 (str
-       (apply str (take (- order num) (repeat \space)))
-       (char (int \A))
+       (n-spaces (- order num))
+       (char-for 0)
        )
 
     ;; other line
     (str
-       (apply str (take (- order num) (repeat \space)))
-       (char (+ (int \A) num))
-       (apply str (take (dec (* 2 num)) (repeat \space)))
-       (char (+ (int \A) num))
+       (n-spaces (- order num))
+       (char-for num)
+       (n-spaces (dec (* 2 num)))
+       (char-for num)
        )
     )
 )
