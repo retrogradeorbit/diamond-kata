@@ -1,5 +1,4 @@
-(ns diamond-kata.core
-  (:gen-class))
+(ns diamond-kata.core)
 
 (defn- char-for [num]
   (char (+ (int \A) num)))
