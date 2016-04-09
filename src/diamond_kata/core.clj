@@ -34,7 +34,7 @@
     (apply
      str
      (interpose
-      "\n"
+      \newline
       (map
        (partial line order)
        (concat (range (inc order))
