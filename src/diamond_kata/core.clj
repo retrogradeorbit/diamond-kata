@@ -13,23 +13,23 @@
 (defn- n-spaces [len]
   (apply str (take len (repeat \space))))
 
+(defn- prefix-spaces [order num]
+  (n-spaces (- order num)))
+
 (defn- line [order num]
   (if (zero? num)
     ;; first/last line
     (str
-       (n-spaces (- order num))
+       (prefix-spaces order num)
        (char-for 0)
        )
 
     ;; other line
     (str
-       (n-spaces (- order num))
+       (prefix-spaces order num)
        (char-for num)
        (n-spaces (dec (* 2 num)))
-       (char-for num)
-       )
-    )
-)
+       (char-for num))))
 
 (defn diamond [order]
   (if (zero? order)
