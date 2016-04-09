@@ -37,8 +37,7 @@
       (map
        (partial line order)
        (concat (range (inc order))
-               (reverse (range order)))))
-)))
+               (reverse (range order))))))))
 
 (defn -main
   "Print out a diamond order n"
