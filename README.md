@@ -25,6 +25,21 @@ A
 to
 
 ```
+$ lein run 4
+    A
+   B B
+  C   C
+ D     D
+E       E
+ D     D
+  C   C
+   B B
+    A
+```
+
+to
+
+```
 $ lein run 25
                          A
                         B B
