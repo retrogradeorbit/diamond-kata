@@ -8,10 +8,20 @@
   (println "Hello, World!"))
 
 (defn diamond [order]
-  (str (char (int \A))"\n"))
+  (str (char (int \A))))
 
 (deftest diamond-test
   (is (=
        (diamond 1)
-       "A\n"))
+       "A"))
+  (is (=
+
+(diamond 2)
+" A
+B B
+ A"
+
+  )
+
+)
 )
