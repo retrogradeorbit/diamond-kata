@@ -10,8 +10,7 @@
   (if (zero? order)
     (vector (char-for 0))
     (concat
-     (map
-      (partial str \space)
+     (map (partial str \space)
       (diamond-top (dec order)))
      [(str
        (char-for order)
@@ -19,10 +18,8 @@
        (char-for order))])))
 
 (defn diamond [order]
-  (apply
-   str
-   (interpose
-    \newline
+  (apply str
+   (interpose \newline
     (let [top (diamond-top order)]
       (concat top (reverse (butlast top)))))))
 
