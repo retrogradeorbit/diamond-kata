@@ -6,7 +6,7 @@
 (defn- char-for-row [n y]
   (char-i (if (<= y n) y (- (* 2 n) y))))
 
-(defn- char-at [n x y]
+(defn- char-at [n y x]
   (if (or (= n (+ x y))
           (= n (- x y))
           (= n (- y x))
@@ -16,12 +16,12 @@
 
 (defn diamond [n]
   (let [size (inc (* 2 n))]
-    (doseq [y (range size)]
-      (doseq [x (range size)]
-        (print (char-at n x y)))
-      (println))))
+    (apply str
+       (map
+        #(str (apply str (map (partial char-at n %) (range size))) \newline)
+        (range size)))))
 
 (defn -main
   "Print out a diamond order n"
   [n]
-  (diamond (read-string n)))
+  (println (diamond (read-string n))))
